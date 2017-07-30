@@ -3,3 +3,4 @@ js
 /WebApplication1/bin
 .vs
 .vscode
+/node_modules
