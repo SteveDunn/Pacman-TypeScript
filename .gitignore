@@ -1,0 +1,5 @@
+js
+*.user
+/WebApplication1/bin
+.vs
+.vscode

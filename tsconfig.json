@@ -1,0 +1,36 @@
+{
+  "compileOnSave": true,
+  "compilerOptions": {
+    "outDir": "js",
+    "watch": true,
+    "alwaysStrict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "sourceMap": true,
+    "module": "amd",
+    "lib": [ "es6", "dom" ],
+    "target": "es5",
+
+    "skipLibCheck": true, // Skip type checking of all declaration files (*.d.ts).
+
+    // If you have wrong casing in referenced files e.g. the filename is Global.ts and you have a /// <reference path="global.ts" /> to reference this file, then this can cause to unexpected errors. Visite: http://stackoverflow.com/questions/36628612/typescript-transpiler-casing-issue
+    "forceConsistentCasingInFileNames": true, // Disallow inconsistently-cased references to the same file.
+
+    "allowUnreachableCode": false, // Do not report errors on unreachable code. (Default: False)
+    "allowUnusedLabels": false, // Do not report errors on unused labels. (Default: False)
+
+    "noFallthroughCasesInSwitch": true, // Report errors for fall through cases in switch statement.
+    "noImplicitReturns": true, // Report error when not all code paths in function return a value.
+
+ //   "noUnusedParameters": true, // Report errors on unused parameters.
+    "noUnusedLocals": true, // Report errors on unused locals.
+
+    "noImplicitThis": true, // Raise error on this expressions with an implied "any" type.
+
+    "noEmitOnError": true // Do not emit outputs if any errors were reported.
+  },
+  "exclude": [
+    "node_modules"
+  ],
+  "sourceMap": true
+}

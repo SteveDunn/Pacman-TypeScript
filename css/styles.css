@@ -1,0 +1,117 @@
+@font-face {
+    font-family: 'Joystix';
+    src: url('joystix-webfont.eot');
+    src: url('WebFont.eot?#iefix') format('embedded-opentype'), url('joystix-webfont.woff') format('woff'), url('joystix.ttf') format('truetype');
+}
+
+div.coinButton {
+    display: inline-block;
+    padding: 15px 25px;
+    font-size: 24px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: yellow;
+    border: none;
+    border-radius: 45px;
+    box-shadow: 9px 9px #999;
+}
+
+    div.coinButton:hover {
+        background-color: yellowgreen
+    }
+
+    div.coinButton:active {
+        background-color: yellowgreen;
+        box-shadow: 1px 1px #333;
+        transform: translateY(9px);
+    }
+
+html, body {
+    font-family: 'Joystix', Arial, sans-serif;
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    overflow: hidden;
+}
+
+.loader {
+    position: absolute;
+    top: 10%;
+    bottom: 10%;
+    right: 10%;
+    left: 10%;
+    /* fill parent */
+    background-color: deepskyblue;
+    background: #222 url("./loading-pattern.jpg") repeat center center;
+    background-size: 80% auto;
+    /* let's see it! */
+    color: black;
+    opacity: 10;
+}
+
+
+.all-rounded {
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.spacer {
+    display: block;
+}
+
+#progress-bar {
+    margin: 5%;
+    width: 80%;
+    background: #cccccc;
+    position: relative;
+}
+
+#progress-bar-assets {
+    margin: 5%;
+    width: 80%;
+    background: #cccccc;
+    position: relative;
+}
+
+#progress-bar-scripts-percentage {
+    background: #3063A5;
+    padding: 5px 0px;
+    color: #FFF;
+    text-align: center;
+    height: 20px;
+}
+
+    #progress-bar-scripts-percentage span {
+        display: inline-block;
+        position: absolute;
+        width: 100%;
+        left: 0;
+    }
+
+#progress-bar-assets-percentage {
+    background: #3063A5;
+    padding: 5px 0px;
+    color: #FFF;
+    text-align: center;
+    height: 20px;
+}
+
+    #progress-bar-assets-percentage span {
+        display: inline-block;
+        position: absolute;
+        width: 100%;
+        left: 0;
+    }
+
+
+h1 {
+    color: #EEEEEE
+}
+
+h2 {
+    color: #AAAAAA
+}

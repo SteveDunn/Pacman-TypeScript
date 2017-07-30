@@ -1,0 +1,207 @@
+<!doctype html>
+<html title="pac-man">
+
+<head title="pac-man">
+
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="css/slider.css" />
+    <link rel="stylesheet" type="text/css" href="css/control-panel.css" />
+    <link rel="stylesheet" href="css/keys.css" type="text/css" />
+    <link rel="stylesheet" href="css/animate.css">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="img/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="img/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="img/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="img/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="img/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="img/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="img/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="img/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+    <link rel="manifest" href="img/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="img/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.10/webfont.js"></script>
+
+    <script>
+        WebFont.load({
+            custom: {
+                families: ['Joytstix']
+            }
+        });
+    </script>
+
+    <script src="lib/howler.core.js"></script>
+    <script src="lib/hammer.min.js"></script>
+    <script src="loadState.js"></script>
+    <script src="controlPanel.js"></script>
+</head>
+
+<body id="body">
+    <div id="loader" class="loader">
+        <h1 style="text-align: center">
+            LOADING!
+        </h1>
+
+        <h2>Scripts...</h2>
+
+        <div id="progress-bar" class="all-rounded">
+            <div id="progress-bar-scripts-percentage" class="all-rounded" style="width: 0%">
+                <span id="progress-scriptname"></span>
+            </div>
+        </div>
+
+        <h2>Assets...</h2>
+
+        <div id="progress-bar-assets" class="all-rounded">
+            <div id="progress-bar-assets-percentage" class="all-rounded" style="width: 0%">
+                <span id="progress-assetname"></span>
+            </div>
+        </div>
+    </div>
+
+    <div id="controlPanel" class="controlPanel">
+        <table class="mainTable">
+            <tr>
+                <td id="logoCell" class="animated bounce">
+                    <img id="logo" style="opacity: .95" src="img/logo.png"/>
+                </td>
+            </tr>
+        </table>
+
+        <table class="mainTable">
+            <tr>
+                <td id="btnCoinCell" class="cell">
+                    <div class="buttonLabel">COIN</div>
+                    <div><kbd>5</kbd></div>
+                    <div class="coinButton">
+                        <img id="btnCoin" style="opacity: .5" src="img/insertcoin.png" />
+                    </div>
+                </td>
+            </tr>
+        </table>
+
+        <table class="mainTable">
+            <tr>
+                <td id="cell1Up" class="cell">
+                    <div class="buttonLabel">1UP</div>
+                    <div><kbd>1</kbd></div>
+                    <div>
+                        <img id="1upIcon1" src="img/cab-pac.png" style="visibility: hidden" />
+                        <button data-pressedClass="yellowButtonFocus" id="btn1Up"></button>
+                        <img id="1upIcon2" src="img/cab-pac.png">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td id="cell2Up" class="cell">
+                    <div class="buttonLabel">2UP</div>
+                    <div><kbd>2</kbd></div>
+                    <div>
+                        <img id="2upIcon1" src="img/cab-pac.png">
+                        <button data-pressedClass="yellowButtonFocus" id="btn2Up"></button>
+                        <img id="2upIcon2" src="img/cab-pac.png" style="filter: FlipH">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="cell">
+                    <img id="swipeLegend" src="img/swipe.png" />
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <!--ideal canvas size = 672/944 (0.711 aspect ratio) (or 224 x 314) -->
+    <div id="gameDiv" style="opacity: 0.75;">
+        <canvas id="gameContainer" width="672" height="944">
+            Your browser does not support the HTML5 canvas tag.
+        </canvas>
+    </div>
+
+    <img hidden id="spritesheet" src="img/spritesheet.png" />
+
+    <script type="text/javascript" src="lib/require.js"></script>
+
+<script>
+
+    controlPanel.hide();
+    require.config({
+        waitSeconds: 90,
+        baseUrl: ".",
+        onNodeCreated: function (node, config, moduleName, url) {
+            node.addEventListener('load', function () {
+                loadState.scriptLoaded(moduleName);
+            });
+
+            node.addEventListener('error',
+                function () {
+                    var message = 'module ' + moduleName + ' could not be loaded';
+
+                    console.log(message);
+                    alert(message);
+
+                });
+        }
+    });
+
+    require(["js/Engine", "js/GameStorage"],
+        function (pacManModule) {
+            loadState.scriptsFinishedLoading();
+            var engine = new pacManModule.Engine();
+        });
+
+    controlPanel.initialise();
+
+    loadState.waitForFinish();
+
+    (function () {
+        var game = {
+                element: document.getElementById("gameContainer"),
+                width: 672,
+                height: 944
+            },
+
+            resizeGame = function () {
+
+                var viewport, newGameWidth, newGameHeight, newGameX, newGameY;
+
+                // Get the dimensions of the viewport
+                viewport = {
+                    width: window.innerWidth,
+                    height: window.innerHeight
+                };
+
+                // Determine game size
+                if (game.height / game.width > viewport.height / viewport.width) {
+                    newGameHeight = viewport.height;
+                    newGameWidth = newGameHeight * game.width / game.height;
+                } else {
+                    newGameWidth = viewport.width;
+                    newGameHeight = newGameWidth * game.height / game.width;
+                }
+
+                game.element.style.width = newGameWidth + "px";
+                game.element.style.height = newGameHeight + "px";
+
+                newGameX = (viewport.width - newGameWidth) / 2;
+                newGameY = (viewport.height - newGameHeight) / 2;
+
+                // Set the new padding of the game so it will be centered
+                game.element.style.padding = newGameY + "px " + newGameX / 2 + "px";
+            };
+
+        window.addEventListener("resize", resizeGame);
+        resizeGame();
+    }());
+</script>
+
+</body>
+
+</html>

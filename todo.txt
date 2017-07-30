@@ -1,0 +1,61 @@
+1UP keeps flasshing at top
+
+Show keyboard controls if keyboard present
+
+Show swipe instructions on swipe icon
+
+Pause when lost focus?
+
+Bug - 2 player - p1 dies with a low score, p2 plays, high score increases, p1 then plays, gets higher score bug high score doesn't increase
+
+Keep screen alive on mobile browser
+
+X Ghost eyes in house do not go up and down with them
+
+X Control panel hide when loading screen on
+
+X Blog post
+
+X tidy up code
+    single type in single file
+    context/gameStuff etc.
+    
+X ensure demo mode finishes - needs pac man to die - watch in slowmo with vlc
+
+X Store high-score in cookie?
+X PNRG for ghost frightened mover
+X hide control panel
+X Pan control should allow finger to stay on screen
+X Remove direction buttons - have control panel cover whole screen
+X Pan touch conrols
+X mute button somewhere (top left, semi transparent)
+X remove 'name' from Act and derived
+X test on android emulator
+X Fix sound on android mobile browser (needs button click to play sound)
+X side canvas for coins, 1/2 player button and direction button
+X touch for buttons
+X when pacman is in any tile where he can change direction, then just set that direction:  the centering will bring it back in line
+X Fix bug where frightened movement never finished (near end of level)
+X Fix ghost eyes speed
+X Loading screen
+X Fix bugs in IE
+X Fix bugs in Edge
+X when updating an actor, if it's going up or down and it's not near the vertical center, then center it.
+    if it's going left or right and it's not near the horizontal center, then center it
+X match speed with real game
+X tally up speeds with thos in the pac man dossier
+X host on azure
+X ensure sound in all right areas - find usages on soundnames
+X sound for extra life - then match extra lives to real game
+X show 'player X game over' when game over
+X decrease players remaining on the player intro act
+X ensure ghosts reverse when eating pac eats power pill
+X BUG: ghosts stuck in house after pac dies
+X Cruise Elroy speed on blinky
+x sprite glitches
+X demo mode score increases when eating ghosts but not dots
+X play intro tune just one per game
+X insert coin screen - complete
+X sound on cut scenes
+X fix ghost exit house bug
+X score alignments
