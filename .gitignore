@@ -4,3 +4,4 @@ js
 .vs
 .vscode
 /node_modules
+/App_Data
