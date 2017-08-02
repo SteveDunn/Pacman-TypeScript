@@ -40,7 +40,7 @@ export class Engine {
 
         this._mainWindow = new MainWindow(this);
 
-        window.requestAnimationFrame(() => this.animloop());
+        window.requestAnimationFrame(() => this.mainGameLoop());
 
         Engine.showControlPanel();
     }
@@ -60,8 +60,8 @@ export class Engine {
         return Engine.gameSoundPlayer;
     }
 
-    animloop = () => {
-        window.requestAnimationFrame(() => this.animloop());
+    mainGameLoop = () => {
+        window.requestAnimationFrame(() => this.mainGameLoop());
 
         this.update();
 
