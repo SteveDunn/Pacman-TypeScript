@@ -9,6 +9,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@types/howler": "^2.0.2"
+    "@types/howler": "^2.0.2",
+    "connect": "^3.6.2",
+    "serve-static": "^1.12.3"
   }
 }
