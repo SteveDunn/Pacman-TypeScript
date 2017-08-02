@@ -15,4 +15,4 @@ export { SceneUpdateResult } from "./SceneUpdateResult";
 export { MathHelper} from "./MathHelper"
 export { SoundLoader} from "./SoundLoader"
 export { SoundName } from "./SoundName"
-export { MyAudio } from "./MyAudio"
+export { SoundPlayer} from "./SoundPlayer"

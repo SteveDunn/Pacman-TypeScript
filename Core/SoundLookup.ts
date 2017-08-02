@@ -1,5 +1,5 @@
-import {MyAudio} from "./MyAudio";
+import {SoundPlayer} from "./SoundPlayer";
 
 export interface SoundLookup {
-    [soundName: number]: MyAudio;
+    [soundName: number]: SoundPlayer;
 }

@@ -1,13 +1,13 @@
-import { MyAudio, SoundLoader, SoundName } from "../Core/_exports";
+import { SoundPlayer, SoundLoader, SoundName } from "../Core/_exports";
 import { MainWindow } from "../Game/_exports";
 import { GhostState } from "../Ghosts/_exports";
 
 declare var Howler: any;
 
 export class GameSoundPlayer {
-    private readonly _sirens: MyAudio[];
-    private readonly _frightened: MyAudio;
-    private readonly _ghostEyes: MyAudio;
+    private readonly _sirens: SoundPlayer[];
+    private readonly _frightened: SoundPlayer;
+    private readonly _ghostEyes: SoundPlayer;
 
     constructor(private readonly _loader: SoundLoader) {
 

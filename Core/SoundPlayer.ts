@@ -2,7 +2,7 @@
 
 declare var Howl: any;
 
-export class MyAudio {
+export class SoundPlayer {
 
     private _loaded: boolean;
 

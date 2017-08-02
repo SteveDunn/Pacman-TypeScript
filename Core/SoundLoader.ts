@@ -1,5 +1,5 @@
 import { SoundName } from "./SoundName";
-import { MyAudio } from "./MyAudio";
+import { SoundPlayer} from "./SoundPlayer";
 import {SoundLookup} from "./SoundLookup";
 
 export class SoundLoader {
@@ -35,9 +35,9 @@ export class SoundLoader {
         return this._sounds[name];
     }
 
-    loadAudio(path: string): MyAudio {
+    loadAudio(path: string): SoundPlayer {
 
-        const audio = new MyAudio(path, () => {
+        const audio = new SoundPlayer(path, () => {
             const pc = (++this._loadedCount / this._itemsToLoad) * 100;
             this.whenEachSoundLoaded(path, pc);
         });
