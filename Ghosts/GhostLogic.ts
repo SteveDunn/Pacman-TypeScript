@@ -1,6 +1,6 @@
 import { Tile, Maze, Direction } from "../Game/_exports";
 import { Vector2D, Point } from "../Core/_exports";
-import { GhostState } from "./GhostMode";
+import { GhostState } from "./GhostState";
 import { Ghost } from "./Ghost";
 import {DistanceAndDirection} from "./DistanceAndDirection";
 

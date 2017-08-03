@@ -1,7 +1,7 @@
 import { Canvas, GameContext, Point, Sprite, TwoFrameAnimation, Vector2D } from "../Core/_exports";
 import { GhostFrightSession, Direction } from "../Game/_exports";
 import { GhostSpritesheetInfo } from "./GhostSpritesheetInfo";
-import { GhostState } from "./GhostMode";
+import { GhostState } from "./GhostState";
 import { GhostNickname } from "./GhostNickname";
 import { DirectionInfo } from "./DirectionInfo";
 import { EyesSpritesheetInfo } from "./EyesSpritesheetInfo";

@@ -34,7 +34,7 @@ export class GhostMover {
         // if a ghost is near the center of a cell, then get the 'next cell' and 
         // store where to go from there
 
-        if (tile.isNearCenter) {
+        if (tile.isInCenter) {
             const targetCell = this._getTargetCell();
             const direction = this._intersectionLogic.getWhichWayToGo(targetCell);
 

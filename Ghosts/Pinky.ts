@@ -2,7 +2,7 @@ import { Tile, MainWindow, Diags, Direction, DirectionToIndexLookup, Maze } from
 import { Canvas, Point } from "../Core/_exports";
 
 import { GhostInsideHouseMover } from "./GhostInsideHouseMover";
-import { GhostState } from "./GhostMode";
+import { GhostState } from "./GhostState";
 import { Ghost } from "./Ghost";
 import { GhostNickname } from "./GhostNickname";
 import { DirectionInfo } from "./DirectionInfo";

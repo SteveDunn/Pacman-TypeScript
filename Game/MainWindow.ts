@@ -1,7 +1,7 @@
 import { Engine } from "../Engine";
 import { Ghost } from "../Ghosts/_exports";
 import { Keyboard, EggTimer, SceneUpdateResult, Point, Canvas, GameContext, Vector2D } from "../Core/_exports";
-import { Act, PacManDyingAct, LevelFinishedAct, ActUpdateResult, AttractAct } from "../Scenes/_exports";
+import { Act, PacManDyingAct, LevelFinishedAct, ActUpdateResult, AttractAct} from "../Scenes/_exports";
 
 import { TimedSprite } from "./TimedSprite";
 import { TimedSpriteList } from "./TimedSpriteList";
@@ -32,8 +32,7 @@ export class MainWindow {
 
     private readonly _gameContext: GameContext;
 
-    //  diags: Diags;
-    constructor(public readonly engine: Engine) {
+    constructor() {
         MainWindow.actors = new Actors();
         MainWindow.gameStats = new GameStats();
         MainWindow.tempSprites = new TimedSpriteList();
@@ -56,7 +55,9 @@ export class MainWindow {
         this._statusPanel = new StatusPanel(this._statusCanvas);
 
         MainWindow.currentAct = new AttractAct();
-        //MainWindow.currentAct = new TornGhostChaseAct(this, new NullAct());
+
+        // POINTER: You can change the starting Act by using something like:
+        //MainWindow.currentAct = new TornGhostChaseAct(new AttractAct());
     }
 
     static newGame(players: number) {

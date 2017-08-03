@@ -34,14 +34,10 @@ export class Tile {
     }
 
     get isInCenter(): boolean {
-        return this._isInCenter;
-    }
-
-    get isNearCenter(): boolean {
         return Point.areNear(this._setWith, this._center, .75);
     }
 
-    isNearCenter2(precision: number): boolean {
+    isNearCenter(precision: number): boolean {
         return Point.areNear(this._setWith, this._center, precision);
     }
 

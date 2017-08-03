@@ -6,7 +6,7 @@ import { GhostInsideHouseMover } from "./GhostInsideHouseMover";
 import { GhostScatterMover } from "./GhostScatterMover";
 import { GhostChaseMover } from "./GhostChaseMover";
 import { SimpleGhost } from "./SimpleGhost";
-import { GhostState } from "./GhostMode";
+import { GhostState } from "./GhostState";
 import { GhostNickname } from "./GhostNickname";
 import { GhostFrightenedMover } from "./GhostFrightenedMover";
 import { GhostMover } from "./GhostMover";
@@ -241,7 +241,7 @@ export class Ghost extends SimpleGhost implements IActor {
         this.recentreInLane();
         this.collisionDetection();
 
-        if (this._tile.isNearCenter) {
+        if (this._tile.isInCenter) {
             this._whenInCenterOfNextTile();
             this._whenInCenterOfNextTile = () => { };
         }

@@ -189,7 +189,7 @@ export class PacMan extends Sprite implements IActor {
 
         this.updateAnimation(context);
 
-        if (this._tile.isNearCenter2(4)) {
+        if (this._tile.isNearCenter(4)) {
             this.recordInput(context);
 
             this.recentreInLane();
@@ -197,7 +197,7 @@ export class PacMan extends Sprite implements IActor {
             this.handleDirection();
         }
 
-        if (this._tile.isNearCenter2(1.5)) {
+        if (this._tile.isNearCenter(1.5)) {
             //this.position = this.tile.center;
             this.handleWhatIsUnderCell(context);
             this.handleWrapping();
@@ -287,7 +287,7 @@ export class PacMan extends Sprite implements IActor {
         let requestedDirection = this._direction;
 
         if (this._isDemoMode) {
-            if (this._tile.isNearCenter2(4) && !this._tile.index.equals(this._lastDemoKeyPressAt)) {
+            if (this._tile.isNearCenter(4) && !this._tile.index.equals(this._lastDemoKeyPressAt)) {
                 const choices = MainWindow.actors.maze.getChoicesAtCellPosition(this._tile.index);
 
                 choices.unset(this._direction);

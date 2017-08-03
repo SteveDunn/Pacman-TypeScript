@@ -38,7 +38,7 @@ export class Engine {
 
         this._dateLoopLastRun = window.performance.now();
 
-        this._mainWindow = new MainWindow(this);
+        this._mainWindow = new MainWindow();
 
         window.requestAnimationFrame(() => this.mainGameLoop());
 
@@ -79,9 +79,6 @@ export class Engine {
         }
 
         controlPanel.hide();
-
-        // let ele = <HTMLDivElement>document.getElementById("controlPanel");
-        // ele.style.opacity = "0";
 
         this._credits -= amount;
     }

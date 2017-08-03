@@ -1,6 +1,6 @@
 export { DirectionInfo } from "./DirectionInfo";
 export { GhostNickname } from "./GhostNickname";
-export { GhostState } from "./GhostMode";
+export { GhostState } from "./GhostState";
 export { GhostMovementMode } from "./GhostMovementMode";
 export { Blinky } from "./Blinky";
 export { Pinky } from "./Pinky";
