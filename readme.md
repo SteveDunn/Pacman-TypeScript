@@ -9,6 +9,10 @@ Pacman. Written in TypeScript.  [Play it now, if you like](http://pacman.backroo
 The goal of this project was to learn TypeScript.  I never intended
 releasing the source code, but a few people asked for it, so here it is.  Please go easy on me, it's my first go!
 
+Technical overview [here](http://blog.dunnhq.com/index.php/2017/08/03/pacman-dissected/)
+
+Game overview [here](http://blog.dunnhq.com/index.php/2017/07/13/learning-typescript-by-writing-a-game/)
+
 ## License
 GNU GENERAL PUBLIC LICENSE Version 3 [#](LICENSE.txt)
 
