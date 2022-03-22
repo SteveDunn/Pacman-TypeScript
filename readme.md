@@ -1,6 +1,6 @@
 ﻿# Pacman
 
-Pacman. Written in TypeScript.  [Play it now, if you like](http://pacman.backroomsoftware.com/)
+Pacman. Written in TypeScript.  [Play it now, if you like](https://pacman.azureedge.net/)
 
 <p align="center">
   <img src="doc/screenshot1.png" alt="Screenshot"/>
